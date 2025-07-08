@@ -102,6 +102,8 @@ spec:
                 name: {{ .Values.mastodon.extraEnvFrom }}
             {{- end}}
           env:
+            - name: "BIND"
+              value: "[::]"
             - name: "DB_PASS"
               valueFrom:
                 secretKeyRef:
